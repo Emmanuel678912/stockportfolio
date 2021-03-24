@@ -1,0 +1,31 @@
+{% extends 'base.html' %} <!-- adds content from base.html page -->
+
+{% block content %}
+
+{% if ticker %} <!--if there is a ticker simple return the ticker-->
+    {{ticker}}
+{% endif %}
+</br>
+</br>
+
+{% if api %} <!-- the double curly brace allows you to add data from django.context into your html code -->
+    {% if api == "Error..." %} <!-- checks if wrong url has been implemented -->
+        There was a problem with your ticker symbol please try again.
+    {% else %}
+
+        <h1>{{ api.companyName }}</h1></br>
+        Price: ${{ api.latestPrice }}</br>
+        Previous Close: {{ api.previousClose }}</br>
+        Market Cap: {{ api.marketCap }}</br>
+        Year To Date Change: {{ api.ytdChange }}</br>
+        52 Wk High: {{ api.week52High }}</br>
+        52 Wk Low: {{ api.week52Low }}</br>
+
+        <!--{% for key, value in api.items %}
+            {{ key }}: {{value}} </br>
+
+        {% endfor %}-->    
+    {% endif %}
+{% endif %}
+
+{% endblock %}
