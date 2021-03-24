@@ -1,0 +1,29 @@
+1. pip install gunicorn
+2. pip install django_heroku
+3. pip install python-decouple
+4. pip install dj_database_url
+5. pip freeze > requirements.txt
+6. touch Procfile
+7. add web: gunicorn [appname].wsgi
+8. head to settings.py
+9. import django_heroku
+10. import dj_database_url
+11. from decouple import config
+12. save settings.py
+13. head to middleware
+14. add "whitenoise.middleware.WhiteNoiseMiddleware
+15. head to static files section
+16. add STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+16. head to the bottom of the file
+17. add django_heroku.settings(locals())
+18. head to git bash terminal
+19. type git add .
+20. type git commit -am "[changes that were made]"
+21. type git push
+22. type heroku login
+23. enter login details
+24. type CTRL+C
+25. type heroku keys:add
+26. type heroku create
+27. type heroku rename --app [current app name] [name you want]
+28. type git push heroku main or master (depending on what branch your in, the terminal will tell you which one)
