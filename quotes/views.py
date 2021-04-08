@@ -61,6 +61,8 @@ def add_stock(request):
                 nums.append(total_shares)
                 nums.append(sale_price)
                 nums.append(profit_loss)
+
+                return render(request, 'add_stock.html', {'ticker' : ticker, 'output' : output, 'purchase' : nums[0], 'total_shares' : nums[1], 'sale_price' : nums[2], 'profit_loss' : nums[3]}) # outputs api data 
             except Exception as e:
                 api = "Error..." # this is returned if the API isn't returned
         
