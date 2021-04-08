@@ -38,7 +38,17 @@ DATABASES['default'].update(db_from_env) --
 
 PGUSER=postgres PGPASSWORD=1234 heroku pg:push postgres://localhost/postgresql-shaped-46135
 
-watch dennis ivy in watch later
+to implement postgres
+- head to config vars on heroku
+- create new postgres
+- head to settings.py
+- import dj_database_url
+- add this line of code: db_from_env = dj_database_url.config(conn_max_age=600)
+- git add .
+- git commit -m "[changes that were made]"
+- git push
+- git push heroku main
+- type in terminal heroku run python manage.py migrate
 
 8. head to settings.py
 9. import django_heroku
