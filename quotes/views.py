@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Stock
 from .forms import StockForm
+import random
 from django.contrib import messages
 
 
@@ -51,10 +52,16 @@ def add_stock(request):
             try:
                 api = json.loads(api_request.content) # parses api_request and throws an error if it returns nothing
                 output.append(api) # save output to the list
+                total_shares = random.choice(0.1, 1)
+                value = total_shares * output.latestPrice
+                sale_price = total_shares * output.latestPrice
+                profit_loss = (sale_price - value) / value
             except Exception as e:
                 api = "Error..." # this is returned if the API isn't returned
+        
 
-        return render(request, 'add_stock.html', {'ticker' : ticker, 'output' : output}) # outputs api data 
+
+        return render(request, 'add_stock.html', {'ticker' : ticker, 'output' : output, 'purchase' : value, 'total_shares' : total_shares, 'sale_price' : sale_price, 'profit_loss' : profit_loss}) # outputs api data 
 
 def delete(request, stock_id):
     item = Stock.objects.get(pk=stock_id) # you must first grab the item's id from database, pk is the id number
