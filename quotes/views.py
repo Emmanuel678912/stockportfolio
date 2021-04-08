@@ -64,7 +64,7 @@ def add_stock(request):
         
 
 
-        return render(request, 'add_stock.html', {'ticker' : ticker, 'output' : output, 'purchase' : nums[0], 'total_shares' : nums[1], 'sale_price' : nums[2], 'profit_loss' : nums[3]}) # outputs api data 
+        return render(request, 'add_stock.html', {'ticker' : ticker, 'output' : output}) # outputs api data 
 
 def delete(request, stock_id):
     item = Stock.objects.get(pk=stock_id) # you must first grab the item's id from database, pk is the id number
