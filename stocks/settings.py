@@ -81,8 +81,11 @@ WSGI_APPLICATION = 'stocks.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql', #this section connects to the database using psycopg2
+        'NAME': 'stocks', # you need the name of the database
+        'USER': 'postgres', # the username you used when registering
+        'PASSWORD': '1234',
+        'HOST': 'localhost' # this is the machine that you're on
     }
 }
 

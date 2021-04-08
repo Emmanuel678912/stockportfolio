@@ -1,3 +1,10 @@
+SET ENVIRONMENT VARIABLES FOR SECRET KEY AND OTHER PRIVATE DATA
+- create a .env file
+- enter key, value pairs i.e. the name of the environment variable = the private data
+- create a .gitignore file
+- add *.env to .gitignore file 
+- save both files
+
 1. deactivate venv 
 2. type ~/
 3. mkdir .ssh folder
@@ -27,4 +34,4 @@ if project has been updated
 2. git commit -am "[add version name/what changes were made]"
 
 3. git push
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCqczf3OOQhOuHX/CUkHnoujuyE05iAN3VhPm428oJad3X99hOWvNdAmatyOS7gnEOpGzVoxlHIbXJ0ZVy78ip2bfGwaH6uu3Vgwq4MfMJePovwyvjD5qR9epqunM3Ly0cC9tElc8Md+ouH6pkuWZdbhYkiKnBcxd1lW0c1ZPY4fWvNMCKGGbHZUIKJclen+bHLktWFNqWXYHx2PtwTBXot8GBzoigISzEcjfE3GpgKoZzKp+Au6E/I+Y8jWGvTYeVOuLd96Dc+J+vLSUwpyFFvVX10/KgzKHZWlEB2QHJ/bRJh2UfoMWhYoi4rPmdwxlaJnEAjru0Jmcxok8f1UdSSBogVNJA+spHxIGT7EzsMVUfy5fSWQjZfjQvmqLRfY7HosHnGWKN0jSQru65WNyDMml0izdkv6ABG+eo5RvN2B6dz1K84lPzo09Ecaus8gLWm1/728XboOESpROtGsjberzcoQDsENicreObqAgkBfTqgn6s360H9zig8Z3QNtdE= Emmanuel@WIN-HPV1V723D93
+

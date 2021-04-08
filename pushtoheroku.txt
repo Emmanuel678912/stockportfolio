@@ -5,17 +5,53 @@
 5. pip freeze > requirements.txt
 6. touch Procfile
 7. add web: gunicorn [appname].wsgi
+-- if using postgresql, head to git bash terminal, git init, touch .gitignore --
+-- add these lines to the .gitignore file :
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+venv/
+-- if using postgresql, git add ., git commit -m "message" --
+-- if using postgresql, heroku login, heroku create [name of app] -- 
+-- if using postgresql, add the following to settings.py ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'nameofapp.herokuapp.com'] --
+-- if using postgresql, set environment variables for secret keys and other private data --
+-- if using postgresql, head to terminal and enter heroku config:set SECRET_KEY=secretkey -- 
+-- if using postgresql, set DEBUG to False in settings.py you can use heroku logs instead --
+-- if using postgresql, head to installed apps in settings.py, head to middleware, add 'whitenoise.runserver_nostatic', add 'whitenoise.middleware.WhiteNoiseMiddleware' --
+-- if using postgresql, add STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' --
+-- if using postgresql, add import dj_database_url, db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env) --
+-- if using postgresql, commit to github, git add ., git commit -m "change settings" -- 
+-- if using postgresql, head to the git bash terminal --
+-- heroku addons:create heroku-postgresql:hobby-dev --
+-- heroku config -s | grep DATABASE_URL --
+-- heroku pg:info -- 
+-- use heroku addon: to find out nameofHerokuDB --
+-- PGUSER=postgres PGPASSWORD=[password] --
+-- heroku pg:push postgres://name_of_host/name_of_local_database nameOfHerokuDB --
+-- heroku config:set DISABLE_COLLECTSTATIC=1 --
+-- git push heroku main (or master depending on current branch) --
+
+
+PGUSER=postgres PGPASSWORD=1234 heroku pg:push postgres://localhost/postgresql-shaped-46135
+
+watch dennis ivy in watch later
+
 8. head to settings.py
 9. import django_heroku
 10. import dj_database_url
 11. from decouple import config
 12. save settings.py
 13. head to middleware
-14. add "whitenoise.middleware.WhiteNoiseMiddleware
+14. add "whitenoise.middleware.WhiteNoiseMiddleware"
 15. head to static files section
 16. add STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 16. head to the bottom of the file
 17. add django_heroku.settings(locals())
+-- save settings.py --
 18. head to git bash terminal
 19. type git add .
 20. type git commit -am "[changes that were made]"
