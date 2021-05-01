@@ -84,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql', #this section connects to the database using psycopg2
         'NAME': 'stocks', # you need the name of the database
         'USER': 'postgres', # the username you used when registering
-        'PASSWORD': '1234',
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
         'HOST': 'localhost' # this is the machine that you're on
     }
 }

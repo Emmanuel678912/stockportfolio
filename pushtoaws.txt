@@ -1,0 +1,18 @@
+1. activate venv
+2. pip install awsebcli
+3. head to project directory
+4. pip freeze > requirements.txt
+5. mkdir .ebextensions
+6. head into .ebextensions
+7. create a file called django.config
+8. paste the following into django.config file:
+option_settings:
+  aws:elasticbeanstalk:container:python:
+    WSGIPath: [appname in wsgi.py]/wsgi.py
+9. deactivate venv
+10. enter eb init -p python-3.6 [app name]
+11. enter eb create django-env
+12/ head to aws management console
+13. take the domain and add it to allowed hosts in settings.py
+14. head to console and enter eb deploy
+
