@@ -15,10 +15,6 @@
 
         <h1>{{ api.companyName }}</h1></br>
         Price: ${{ api.latestPrice }}</br>
-        Total Shares: 0.01
-        Share Value: $<code>(0.1 * {{ api.latestPrice }})</code>
-        Sale Price: $<code>(0.3 * {{ api.latestPrice }})</code>
-        Profit/Loss: <code>((0.3 * {{ api.latestPrice }}) - (0.1 * {{ api.latestPrice }})) / (0.1 * {{ api.latestPrice }})</code>
         Previous Close: {{ api.previousClose }}</br>
         Market Cap: {{ api.marketCap }}</br>
         Year To Date Change: {{ api.ytdChange }}</br>
